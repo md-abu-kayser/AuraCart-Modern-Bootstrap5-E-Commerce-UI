@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="ocean-blue">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AuraCart - Modern E-Commerce Experience</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/themes.css" />
+  </head>
+
+  <body>
+    <!-- Announcement Bar -->
+    <div class="announcement-bar">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-6">
+            <span class="announcement-text">
+              <i class="fas fa-shipping-fast me-2"></i>Free shipping on orders
+              over $50
+            </span>
+          </div>
+          <div class="col-md-6 text-md-end">
+            <div class="theme-selector">
+              <span class="me-2">Theme:</span>
+              <div class="theme-colors">
+                <button
+                  class="theme-btn ocean-blue active"
+                  data-theme="ocean-blue"
+                  title="Ocean Blue"
+                ></button>
+                <button
+                  class="theme-btn forest-green"
+                  data-theme="forest-green"
+                  title="Forest Green"
+                ></button>
+                <button
+                  class="theme-btn royal-purple"
+                  data-theme="royal-purple"
+                  title="Royal Purple"
+                ></button>
+                <button
+                  class="theme-btn sunset-orange"
+                  data-theme="sunset-orange"
+                  title="Sunset Orange"
+                ></button>
+                <button
+                  class="theme-btn ruby-red"
+                  data-theme="ruby-red"
+                  title="Ruby Red"
+                ></button>
+              </div>
+              <button
+                class="btn btn-sm btn-outline-secondary ms-2"
+                id="darkModeToggle"
+              >
+                <i class="fas fa-moon"></i> Dark Mode
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mega Navbar -->
+    <header class="sticky-top">
+      <nav class="navbar navbar-expand-lg navbar-light bg-white mega-navbar">
+        <div class="container">
+          <a class="navbar-brand" href="#">
+            <img src="images/logo.png" alt="AuraCart" class="brand-logo" />
+            <span class="brand-text">AuraCart</span>
+          </a>
+
+          <div class="d-flex align-items-center order-lg-3">
+            <!-- Search Bar -->
+            <div class="search-container me-3">
+              <button class="search-toggle-btn btn" id="searchToggle">
+                <i class="fas fa-search"></i>
+              </button>
+              <div class="search-bar" id="searchBar">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Search products..."
+                />
+                <button class="btn search-close" id="searchClose">
+                  <i class="fas fa-times"></i>
+                </button>
+              </div>
+            </div>
+
+            <!-- User Actions -->
+            <div class="user-actions">
+              <a href="#" class="user-action-btn" title="Account">
+                <i class="far fa-user"></i>
+              </a>
+              <a href="#" class="user-action-btn" title="Wishlist">
+                <i class="far fa-heart"></i>
+                <span class="action-badge">3</span>
+              </a>
+              <a href="#" class="user-action-btn" title="Cart">
+                <i class="fas fa-shopping-bag"></i>
+                <span class="action-badge">2</span>
+              </a>
+            </div>
+
+            <button
+              class="navbar-toggler ms-2"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarContent"
+              aria-controls="navbarContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          </div>
+
+          <div class="collapse navbar-collapse order-lg-2" id="navbarContent">
+            <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+              <li class="nav-item dropdown mega-dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="electronicsDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Electronics
+                </a>
+                <div
+                  class="dropdown-menu mega-menu"
+                  aria-labelledby="electronicsDropdown"
+                >
+                  <div class="container-fluid">
+                    <div class="row">
+                      <div class="col-lg-3">
+                        <h6>Audio & Video</h6>
+                        <a class="dropdown-item" href="#">Headphones</a>
+                        <a class="dropdown-item" href="#">Speakers</a>
+                        <a class="dropdown-item" href="#">Home Theater</a>
+                        <a class="dropdown-item" href="#">TV & Video</a>
+                      </div>
+                      <div class="col-lg-3">
+                        <h6>Computers</h6>
+                        <a class="dropdown-item" href="#">Laptops</a>
+                        <a class="dropdown-item" href="#">Desktops</a>
+                        <a class="dropdown-item" href="#">Monitors</a>
+                        <a class="dropdown-item" href="#">Accessories</a>
+                      </div>
+                      <div class="col-lg-3">
+                        <h6>Mobile & Tablets</h6>
+                        <a class="dropdown-item" href="#">Smartphones</a>
+                        <a class="dropdown-item" href="#">Tablets</a>
+                        <a class="dropdown-item" href="#">Wearables</a>
+                        <a class="dropdown-item" href="#">Accessories</a>
+                      </div>
+                      <div class="col-lg-3">
+                        <div class="mega-menu-promo">
+                          <img
+                            src="https://via.placeholder.com/200x120/f8f9fa/6c757d?text=Special+Offer"
+                            alt="Special Offer"
+                            class="img-fluid rounded"
+                          />
+                          <h6>Summer Sale</h6>
+                          <p>Up to 40% off on electronics</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="#shoes">Shoes</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#backpack">Backpacks</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="fashionDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Fashion
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="fashionDropdown">
+                  <li><a class="dropdown-item" href="#">Men's Fashion</a></li>
+                  <li><a class="dropdown-item" href="#">Women's Fashion</a></li>
+                  <li><a class="dropdown-item" href="#">Kids' Fashion</a></li>
+                  <li><hr class="dropdown-divider" /></li>
+                  <li><a class="dropdown-item" href="#">Accessories</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#subscribe">Deals</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Hero Slider -->
+    <section class="hero-slider">
+      <div
+        id="heroCarousel"
+        class="carousel slide carousel-fade"
+        data-bs-ride="carousel"
+      >
+        <div class="carousel-indicators">
+          <button
+            type="button"
+            data-bs-target="#heroCarousel"
+            data-bs-slide-to="0"
+            class="active"
+            aria-current="true"
+            aria-label="Slide 1"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#heroCarousel"
+            data-bs-slide-to="1"
+            aria-label="Slide 2"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#heroCarousel"
+            data-bs-slide-to="2"
+            aria-label="Slide 3"
+          ></button>
+        </div>
+
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="container">
+              <div class="row align-items-center min-vh-60">
+                <div class="col-lg-6">
+                  <div class="hero-content">
+                    <span class="hero-badge">New Arrival</span>
+                    <h1 class="hero-title">Premium Sound Experience</h1>
+                    <p class="hero-description">
+                      Immerse yourself in crystal-clear audio with our latest
+                      noise-canceling headphones. Perfect for music lovers and
+                      professionals alike.
+                    </p>
+                    <div class="hero-price">
+                      <span class="current-price">$299</span>
+                      <span class="original-price">$399</span>
+                      <span class="discount-badge">Save 25%</span>
+                    </div>
+                    <div class="hero-actions">
+                      <button class="btn btn-primary hero-btn">
+                        <i class="fas fa-shopping-cart me-2"></i>Add to Cart
+                      </button>
+                      <button class="btn btn-outline-secondary">
+                        Learn More
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="hero-image">
+                    <img
+                      src="images/banner-images/headphone.png"
+                      class="img-fluid"
+                      alt="Headphones"
+                    />
+                    <div class="floating-badge trending-badge">
+                      <i class="fas fa-fire"></i> Trending
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <div class="container">
+              <div class="row align-items-center min-vh-60">
+                <div class="col-lg-6">
+                  <div class="hero-content">
+                    <span class="hero-badge">Limited Offer</span>
+                    <h1 class="hero-title">4K Ultra HD Smart TV</h1>
+                    <p class="hero-description">
+                      Transform your entertainment with stunning picture quality
+                      and smart features. Experience cinema-like viewing from
+                      the comfort of your home.
+                    </p>
+                    <div class="hero-price">
+                      <span class="current-price">$899</span>
+                      <span class="original-price">$1,199</span>
+                      <span class="discount-badge">Save $300</span>
+                    </div>
+                    <div class="hero-actions">
+                      <button class="btn btn-primary hero-btn">
+                        <i class="fas fa-bolt me-2"></i>Buy Now
+                      </button>
+                      <button class="btn btn-outline-secondary">Compare</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="hero-image">
+                    <img
+                      src="images/banner-images/tv.png"
+                      class="img-fluid"
+                      alt="Smart TV"
+                    />
+                    <div class="floating-badge exclusive-badge">
+                      <i class="fas fa-crown"></i> Exclusive
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <div class="container">
+              <div class="row align-items-center min-vh-60">
+                <div class="col-lg-6">
+                  <div class="hero-content">
+                    <span class="hero-badge">Best Seller</span>
+                    <h1 class="hero-title">Next-Gen Gaming Console</h1>
+                    <p class="hero-description">
+                      Elevate your gaming experience with cutting-edge
+                      technology and immersive gameplay. The ultimate console
+                      for serious gamers.
+                    </p>
+                    <div class="hero-price">
+                      <span class="current-price">$499</span>
+                      <span class="original-price">$599</span>
+                      <span class="discount-badge">Save $100</span>
+                    </div>
+                    <div class="hero-actions">
+                      <button class="btn btn-primary hero-btn">
+                        <i class="fas fa-gamepad me-2"></i>Shop Now
+                      </button>
+                      <button class="btn btn-outline-secondary">
+                        View Games
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="hero-image">
+                    <img
+                      src="images/banner-images/xbox.png"
+                      class="img-fluid"
+                      alt="Gaming Console"
+                    />
+                    <div class="floating-badge popular-badge">
+                      <i class="fas fa-star"></i> Popular
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#heroCarousel"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#heroCarousel"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section py-5">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-md-3 col-sm-6">
+            <div class="feature-card text-center">
+              <div class="feature-icon">
+                <i class="fas fa-shipping-fast"></i>
+              </div>
+              <h5>Free Shipping</h5>
+              <p>Free delivery for orders above $50</p>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <div class="feature-card text-center">
+              <div class="feature-icon">
+                <i class="fas fa-shield-alt"></i>
+              </div>
+              <h5>Secure Payment</h5>
+              <p>100% secure payment processing</p>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <div class="feature-card text-center">
+              <div class="feature-icon">
+                <i class="fas fa-undo-alt"></i>
+              </div>
+              <h5>Easy Returns</h5>
+              <p>30-day return policy</p>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <div class="feature-card text-center">
+              <div class="feature-icon">
+                <i class="fas fa-headset"></i>
+              </div>
+              <h5>24/7 Support</h5>
+              <p>Round-the-clock customer service</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="categories-section py-5">
+      <div class="container">
+        <div class="section-header text-center mb-5">
+          <h2 class="section-title">Shop by Category</h2>
+          <p class="section-subtitle">Discover our wide range of products</p>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-lg-4 col-md-6">
+            <div class="category-card">
+              <div class="category-image">
+                <img src="images/categories/watch.png" alt="Watches" />
+                <div class="category-overlay">
+                  <h4>Watches</h4>
+                  <p>Latest collection</p>
+                  <button class="btn btn-outline-light">Shop Now</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="category-card">
+              <div class="category-image">
+                <img src="images/categories/bag.png" alt="Bags" />
+                <div class="category-overlay">
+                  <h4>Bags</h4>
+                  <p>Premium quality</p>
+                  <button class="btn btn-outline-light">Shop Now</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="category-card">
+              <div class="category-image">
+                <img src="images/categories/shoes.png" alt="Shoes" />
+                <div class="category-overlay">
+                  <h4>Shoes</h4>
+                  <p>Comfort & style</p>
+                  <button class="btn btn-outline-light">Shop Now</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Products Section - Shoes -->
+    <section class="products-section py-5" id="shoes">
+      <div class="container">
+        <div class="section-header text-center mb-5">
+          <h2 class="section-title">Featured Shoes</h2>
+          <p class="section-subtitle">
+            Step up your style with our premium collection
+          </p>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-lg-4 col-md-6">
+            <div class="product-card">
+              <div class="product-image">
+                <img src="images/shoes/shoe-1.png" alt="Supply 350" />
+                <div class="product-actions">
+                  <button
+                    class="btn-action wishlist-btn"
+                    title="Add to Wishlist"
+                  >
+                    <i class="far fa-heart"></i>
+                  </button>
+                  <button class="btn-action quick-view-btn" title="Quick View">
+                    <i class="far fa-eye"></i>
+                  </button>
+                </div>
+                <span class="product-badge sale-badge">Sale</span>
+              </div>
+              <div class="product-info">
+                <h5 class="product-title">Supply 350</h5>
+                <div class="product-price">
+                  <span class="current-price">$160</span>
+                  <span class="original-price">$200</span>
+                </div>
+                <div class="product-rating">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star-half-alt"></i>
+                  <span class="rating-count">(128)</span>
+                </div>
+                <button class="btn btn-primary w-100 add-to-cart-btn">
+                  <i class="fas fa-shopping-cart me-2"></i>Add to Cart
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="product-card">
+              <div class="product-image">
+                <img src="images/shoes/shoe-2.png" alt="Nike 360" />
+                <div class="product-actions">
+                  <button
+                    class="btn-action wishlist-btn"
+                    title="Add to Wishlist"
+                  >
+                    <i class="far fa-heart"></i>
+                  </button>
+                  <button class="btn-action quick-view-btn" title="Quick View">
+                    <i class="far fa-eye"></i>
+                  </button>
+                </div>
+                <span class="product-badge new-badge">New</span>
+              </div>
+              <div class="product-info">
+                <h5 class="product-title">Nike 360</h5>
+                <div class="product-price">
+                  <span class="current-price">$180</span>
+                </div>
+                <div class="product-rating">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="far fa-star"></i>
+                  <span class="rating-count">(95)</span>
+                </div>
+                <button class="btn btn-primary w-100 add-to-cart-btn">
+                  <i class="fas fa-shopping-cart me-2"></i>Add to Cart
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="product-card">
+              <div class="product-image">
+                <img src="images/shoes/shoe-3.png" alt="Red Airmax" />
+                <div class="product-actions">
+                  <button
+                    class="btn-action wishlist-btn"
+                    title="Add to Wishlist"
+                  >
+                    <i class="far fa-heart"></i>
+                  </button>
+                  <button class="btn-action quick-view-btn" title="Quick View">
+                    <i class="far fa-eye"></i>
+                  </button>
+                </div>
+                <span class="product-badge hot-badge">Hot</span>
+              </div>
+              <div class="product-info">
+                <h5 class="product-title">Red Airmax</h5>
+                <div class="product-price">
+                  <span class="current-price">$220</span>
+                  <span class="original-price">$280</span>
+                </div>
+                <div class="product-rating">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <span class="rating-count">(156)</span>
+                </div>
+                <button class="btn btn-primary w-100 add-to-cart-btn">
+                  <i class="fas fa-shopping-cart me-2"></i>Add to Cart
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Products Section - Backpacks -->
+    <section class="products-section py-5" id="backpack">
+      <div class="container">
+        <div class="section-header text-center mb-5">
+          <h2 class="section-title">Premium Backpacks</h2>
+          <p class="section-subtitle">Carry your world in style</p>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-lg-4 col-md-6">
+            <div class="product-card">
+              <div class="product-image">
+                <img src="images/bags/bag-1.png" alt="Red Laltu Bag" />
+                <div class="product-actions">
+                  <button
+                    class="btn-action wishlist-btn"
+                    title="Add to Wishlist"
+                  >
+                    <i class="far fa-heart"></i>
+                  </button>
+                  <button class="btn-action quick-view-btn" title="Quick View">
+                    <i class="far fa-eye"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="product-info">
+                <h5 class="product-title">Red Laltu Bag</h5>
+                <div class="product-price">
+                  <span class="current-price">$89</span>
+                  <span class="original-price">$120</span>
+                </div>
+                <div class="product-rating">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="far fa-star"></i>
+                  <span class="rating-count">(64)</span>
+                </div>
+                <button class="btn btn-primary w-100 add-to-cart-btn">
+                  <i class="fas fa-shopping-cart me-2"></i>Add to Cart
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="product-card">
+              <div class="product-image">
+                <img src="images/bags/bag-2.png" alt="Blue Travel Bag" />
+                <div class="product-actions">
+                  <button
+                    class="btn-action wishlist-btn"
+                    title="Add to Wishlist"
+                  >
+                    <i class="far fa-heart"></i>
+                  </button>
+                  <button class="btn-action quick-view-btn" title="Quick View">
+                    <i class="far fa-eye"></i>
+                  </button>
+                </div>
+                <span class="product-badge new-badge">New</span>
+              </div>
+              <div class="product-info">
+                <h5 class="product-title">Blue Travel Bag</h5>
+                <div class="product-price">
+                  <span class="current-price">$120</span>
+                </div>
+                <div class="product-rating">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star-half-alt"></i>
+                  <span class="rating-count">(89)</span>
+                </div>
+                <button class="btn btn-primary w-100 add-to-cart-btn">
+                  <i class="fas fa-shopping-cart me-2"></i>Add to Cart
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="product-card">
+              <div class="product-image">
+                <img src="images/bags/bag-3.png" alt="Black Backpack" />
+                <div class="product-actions">
+                  <button
+                    class="btn-action wishlist-btn"
+                    title="Add to Wishlist"
+                  >
+                    <i class="far fa-heart"></i>
+                  </button>
+                  <button class="btn-action quick-view-btn" title="Quick View">
+                    <i class="far fa-eye"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="product-info">
+                <h5 class="product-title">Black Backpack</h5>
+                <div class="product-price">
+                  <span class="current-price">$75</span>
+                  <span class="original-price">$99</span>
+                </div>
+                <div class="product-rating">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <span class="rating-count">(142)</span>
+                </div>
+                <button class="btn btn-primary w-100 add-to-cart-btn">
+                  <i class="fas fa-shopping-cart me-2"></i>Add to Cart
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter-section py-5" id="subscribe">
+      <div class="container">
+        <div class="newsletter-card">
+          <div class="row align-items-center">
+            <div class="col-lg-6">
+              <div class="newsletter-content">
+                <h2>Stay Updated</h2>
+                <p>
+                  Subscribe to our newsletter and get exclusive deals, product
+                  updates, and special offers delivered straight to your inbox.
+                </p>
+                <div class="newsletter-features">
+                  <div class="feature-item">
+                    <i class="fas fa-gift"></i>
+                    <span>Exclusive deals & offers</span>
+                  </div>
+                  <div class="feature-item">
+                    <i class="fas fa-newspaper"></i>
+                    <span>Product updates & news</span>
+                  </div>
+                  <div class="feature-item">
+                    <i class="fas fa-tag"></i>
+                    <span>Early access to sales</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="newsletter-form">
+                <form id="subscriptionForm">
+                  <div class="mb-3">
+                    <input
+                      type="email"
+                      class="form-control form-control-lg"
+                      placeholder="Enter your email"
+                      required
+                    />
+                  </div>
+                  <div class="form-check mb-3">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="newsletterConsent"
+                      required
+                    />
+                    <label class="form-check-label" for="newsletterConsent">
+                      I agree to receive marketing emails and newsletters
+                    </label>
+                  </div>
+                  <button type="submit" class="btn btn-primary btn-lg w-100">
+                    <i class="fas fa-paper-plane me-2"></i>Subscribe Now
+                  </button>
+                </form>
+                <p class="newsletter-note">
+                  You can unsubscribe at any time. We respect your privacy.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-lg-4 col-md-6">
+            <div class="footer-brand">
+              <img src="images/logo.png" alt="AuraCart" class="footer-logo" />
+              <h4>AuraCart</h4>
+              <p>
+                Your trusted partner for premium online shopping experience.
+                Quality products, unbeatable prices.
+              </p>
+              <div class="social-links">
+                <a href="#" class="social-link"
+                  ><i class="fab fa-facebook-f"></i
+                ></a>
+                <a href="#" class="social-link"
+                  ><i class="fab fa-twitter"></i
+                ></a>
+                <a href="#" class="social-link"
+                  ><i class="fab fa-instagram"></i
+                ></a>
+                <a href="#" class="social-link"
+                  ><i class="fab fa-linkedin-in"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-6">
+            <h5>Quick Links</h5>
+            <ul class="footer-links">
+              <li><a href="#">Home</a></li>
+              <li><a href="#shoes">Shoes</a></li>
+              <li><a href="#backpack">Backpacks</a></li>
+              <li><a href="#subscribe">Deals</a></li>
+              <li><a href="#">About Us</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <h5>Customer Service</h5>
+            <ul class="footer-links">
+              <li><a href="#">Contact Us</a></li>
+              <li><a href="#">Shipping Policy</a></li>
+              <li><a href="#">Return Policy</a></li>
+              <li><a href="#">FAQ</a></li>
+              <li><a href="#">Track Order</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <h5>Contact Info</h5>
+            <div class="contact-info">
+              <div class="contact-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>123 Commerce St, Sofia, Bulgaria</span>
+              </div>
+              <div class="contact-item">
+                <i class="fas fa-phone"></i>
+                <span>+1 (555) 123-4567</span>
+              </div>
+              <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <span>support@auracart.com</span>
+              </div>
+              <div class="contact-item">
+                <i class="fas fa-clock"></i>
+                <span>Mon-Fri: 9AM-6PM</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <div class="row align-items-center">
+            <div class="col-md-6">
+              <p class="mb-0">&copy; 2025 AuraCart. All rights reserved.</p>
+            </div>
+            <div class="col-md-6 text-md-end">
+              <div class="payment-methods">
+                <span class="me-2">We accept:</span>
+                <i class="fab fa-cc-visa"></i>
+                <i class="fab fa-cc-mastercard"></i>
+                <i class="fab fa-cc-paypal"></i>
+                <i class="fab fa-cc-apple-pay"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap & JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>

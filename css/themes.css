@@ -1,0 +1,98 @@
+/* ===== Theme System ===== */
+
+/* Ocean Blue Theme (Default) */
+[data-theme="ocean-blue"] {
+  --primary-color: #2c5aa0;
+  --primary-dark: #1e4080;
+  --primary-light: #4a7bc8;
+  --accent-color: #1e88e5;
+}
+
+/* Forest Green Theme */
+[data-theme="forest-green"] {
+  --primary-color: #2e7d32;
+  --primary-dark: #1b5e20;
+  --primary-light: #4caf50;
+  --accent-color: #66bb6a;
+}
+
+/* Royal Purple Theme */
+[data-theme="royal-purple"] {
+  --primary-color: #6a1b9a;
+  --primary-dark: #4a148c;
+  --primary-light: #9c27b0;
+  --accent-color: #ba68c8;
+}
+
+/* Sunset Orange Theme */
+[data-theme="sunset-orange"] {
+  --primary-color: #ef6c00;
+  --primary-dark: #e65100;
+  --primary-light: #ff9800;
+  --accent-color: #ffb74d;
+}
+
+/* Ruby Red Theme */
+[data-theme="ruby-red"] {
+  --primary-color: #c62828;
+  --primary-dark: #b71c1c;
+  --primary-light: #f44336;
+  --accent-color: #ef5350;
+}
+
+/* Dark Theme Overrides */
+[data-theme="dark"] {
+  --text-primary: #f7fafc;
+  --text-secondary: #cbd5e0;
+  --bg-primary: #1a202c;
+  --bg-secondary: #2d3748;
+  --bg-tertiary: #4a5568;
+  --border-color: #4a5568;
+}
+
+/* Dark Theme Variants */
+[data-theme="dark"][data-color-theme="ocean-blue"] {
+  --primary-color: #4299e1;
+  --primary-dark: #3182ce;
+  --primary-light: #63b3ed;
+  --accent-color: #90cdf4;
+}
+
+[data-theme="dark"][data-color-theme="forest-green"] {
+  --primary-color: #48bb78;
+  --primary-dark: #38a169;
+  --primary-light: #68d391;
+  --accent-color: #9ae6b4;
+}
+
+[data-theme="dark"][data-color-theme="royal-purple"] {
+  --primary-color: #9f7aea;
+  --primary-dark: #805ad5;
+  --primary-light: #b794f4;
+  --accent-color: #d6bcfa;
+}
+
+[data-theme="dark"][data-color-theme="sunset-orange"] {
+  --primary-color: #ed8936;
+  --primary-dark: #dd6b20;
+  --primary-light: #f6ad55;
+  --accent-color: #fbd38d;
+}
+
+[data-theme="dark"][data-color-theme="ruby-red"] {
+  --primary-color: #fc8181;
+  --primary-dark: #f56565;
+  --primary-light: #feb2b2;
+  --accent-color: #fed7d7;
+}
+
+/* Theme Transition */
+body,
+.btn,
+.form-control,
+.card,
+.navbar,
+.footer {
+  transition: background-color 0.3s ease, color 0.3s ease,
+    border-color 0.3s ease;
+}
